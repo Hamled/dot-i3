@@ -170,3 +170,6 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Screenshots
+bindsym $mod+Print exec scrot 'screenshot_%Y-%m-%d-%s.jpg' -e 'mv $f ~/Pictures/'
