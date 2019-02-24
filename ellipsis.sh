@@ -2,23 +2,15 @@
 #
 # Hamled/i3 ellipsis package
 
-# The following hooks can be defined to customize behavior of your package:
-# pkg.install() {
-#     fs.link_files $PKG_PATH
-# }
+ELLIPSIS_VERSION_DEP='1.9.4'
 
-# pkg.push() {
-#     git.push
-# }
+pkg.link() {
+  mkdir -p "$ELLIPSIS_HOME/.config"
+  fs.link_file "$PKG_PATH" "$ELLIPSIS_HOME/.config/i3"
+}
 
-# pkg.pull() {
-#     git.pull
-# }
+pkg.unlink() {
+  rm "$ELLIPSIS_HOME/.config/i3"
 
-# pkg.installed() {
-#     git.status
-# }
-#
-# pkg.status() {
-#     git.diffstat
-# }
+  hooks.unlink
+}
