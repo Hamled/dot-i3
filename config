@@ -176,3 +176,6 @@ bindsym $mod+Print exec scrot 'screenshot_%Y-%m-%d-%s.jpg' -e 'mv $f ~/Pictures/
 
 # Fix GTK File Chooser
 for_window [window_role="GtkFileChooserDialog"] floating disable
+
+# Start Burpsuite project selection floating
+for_window [class="^burp-"] floating enable
